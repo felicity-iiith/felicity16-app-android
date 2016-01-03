@@ -44,6 +44,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/category/:categoryid',
       templateUrl: 'templates/category.html',
       controller: 'CategoryCtrl'
+    }).state('eventview', {
+      url: '/events/:eventid',
+      templateUrl: 'templates/eventview.html',
+      controller: 'EventViewCtrl'
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');
