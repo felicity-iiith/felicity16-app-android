@@ -32,19 +32,11 @@ angular.module('starter.services', [])
   };
 
   return {
+    update: function() {
+      //update here
+    },
     all: function() {
       return events;
-    },
-    remove: function(eventNumber) {
-      events.splice(events.indexOf(eventNumber), 1);
-    },
-    get: function(eventNumber) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(eventNumber)) {
-          return events[i];
-        }
-      }
-      return null;
     }
   };
 });
