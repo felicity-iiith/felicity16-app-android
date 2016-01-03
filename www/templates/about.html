@@ -1,11 +1,12 @@
-  <ion-content>
 <style>
   @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-  * { padding: 0; margin: 0; }
+  * {
+    padding: 0;
+    margin: 0;
+  }
 
-  body, html, .pane
-  {
+  body, html, .pane {
     line-height: normal !important;
     width: 100%;
     height: 100%;
@@ -16,8 +17,7 @@
     overflow: hidden;
   }
 
-  p#start
-  {
+  p#start {
     position: relative;
     width: 16em;
     font-size: 200%;
@@ -34,37 +34,66 @@
   }
 
   @-webkit-keyframes intro {
-    0% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   @-moz-keyframes intro {
-    0% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   @-ms-keyframes intro {
-    0% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   @-o-keyframes intro {
-    0% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
   @keyframes intro {
-    0% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 
-  h1
-  {
+  h1 {
     position: absolute;
     width: 3em;
     left: 50%;
@@ -85,8 +114,7 @@
     animation: logo 5s ease-out 2.5s;
   }
 
-  h1 sub
-  {
+  h1 sub {
     display: block;
     font-size: 0.3em;
     letter-spacing: 0;
@@ -94,38 +122,77 @@
   }
 
   @-webkit-keyframes logo {
-    0% { -webkit-transform: scale(1); opacity: 1; }
-    50% { opacity: 1; }
-    100% { -webkit-transform: scale(0.1); opacity: 0; }
+    0% {
+      -webkit-transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0.1);
+      opacity: 0;
+    }
   }
 
   @-moz-keyframes logo {
-    0% { -moz-transform: scale(1); opacity: 1; }
-    50% { opacity: 1; }
-    100% { -moz-transform: scale(0.1); opacity: 0; }
+    0% {
+      -moz-transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -moz-transform: scale(0.1);
+      opacity: 0;
+    }
   }
 
   @-ms-keyframes logo {
-    0% { -ms-transform: scale(1); opacity: 1; }
-    50% { opacity: 1; }
-    100% { -ms-transform: scale(0.1); opacity: 0; }
+    0% {
+      -ms-transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -ms-transform: scale(0.1);
+      opacity: 0;
+    }
   }
 
   @-o-keyframes logo {
-    0% { -o-transform: scale(1); opacity: 1; }
-    50% { opacity: 1; }
-    100% { -o-transform: scale(0.1); opacity: 0; }
+    0% {
+      -o-transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -o-transform: scale(0.1);
+      opacity: 0;
+    }
   }
 
   @keyframes logo {
-    0% { transform: scale(1); opacity: 1; }
-    50% { opacity: 1; }
-    100% { transform: scale(0.1); opacity: 0; }
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
   }
 
   /* the interesting 3D scrolling stuff */
-  #titles
-  {
+  #titles {
     position: absolute;
     width: 18em;
     height: 50em;
@@ -147,41 +214,36 @@
     transform: perspective(300px) rotateX(25deg);
   }
 
-  #titles:after
-  {
+  #titles:after {
     position: absolute;
     content: ' ';
     left: 0;
     right: 0;
     top: 0;
     bottom: 60%;
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-    background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-    background-image: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-    background-image: -o-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-    background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    background-image: linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
     pointer-events: none;
   }
 
-  #titles p
-  {
+  #titles p {
     text-align: justify;
     margin: 0.8em 0;
   }
 
-  #titles p.center
-  {
+  #titles p.center {
     text-align: center;
   }
 
-  #titles a
-  {
+  #titles a {
     color: #ff6;
     text-decoration: underline;
   }
 
-  #titlecontent
-  {
+  #titlecontent {
     position: absolute;
     top: 100%;
     -webkit-animation: scroll 100s linear 4s infinite;
@@ -193,76 +255,108 @@
 
   /* animation */
   @-webkit-keyframes scroll {
-    0% { top: 100%; }
-    100% { top: -170%; }
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -170%;
+    }
   }
 
   @-moz-keyframes scroll {
-    0% { top: 100%; }
-    100% { top: -170%; }
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -170%;
+    }
   }
 
   @-ms-keyframes scroll {
-    0% { top: 100%; }
-    100% { top: -170%; }
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -170%;
+    }
   }
 
   @-o-keyframes scroll {
-    0% { top: 100%; }
-    100% { top: -170%; }
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -170%;
+    }
   }
 
   @keyframes scroll {
-    0% { top: 100%; }
-    100% { top: -170%; }
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -170%;
+    }
   }
 </style>
+<ion-content scroll="false">
 
-<p id="start">A short time ago in a college near-by&hellip;</p>
 
-<h1>Felicity<sub>2K16</sub></h1>
+  <p id="start">A short time ago in a college near-by&hellip;</p>
 
-<div id="titles"><div id="titlecontent">
+  <h1>Felicity<sub>2K16</sub></h1>
 
-  <p class="center">EPISODE IV<br />A NEW HOPE FOR CSS3</p>
+  <div id="titles">
+    <div id="titlecontent">
 
-  <p>It is a period of vendor war.</p>
+      <p class="center">EPISODE IV<br/>A NEW HOPE FOR CSS3</p>
 
-  <p>                 very iiit                   so much felicity
-    such iiit            very iiit       so iiit              good doge
-    such iiit     very felicity          so iiit        such iiit
-    so much felicity            such felicity
-    much felicity          very iiit                             very iiit
-    such iiit              good doge         much felicity
-    so felicity      much iiit         so much felicity
-    so felicity     good doge             such felicity           much iiit
-    </p>
+      <p>It is a period of vendor war.</p>
 
-  <p>so much felicity       such felicity             so much felicity
-    so iiit           very felicity
-    such iiit             such felicity                    such felicity
-    very iiit                      so iiit               such felicity
-    such iiit           wow
-    good doge          so felicity       wow
-    such iiit
-    very iiit     so felicity       much iiit         wow           much iiit
-    very iiit
-    so much iiit              such iiit      so much iiit
-    so iiit             much iiit         good doge
-    so iiit      very iiit                so iiit            so much felicity   </p>
+      <p> very iiit so much felicity
+        such iiit very iiit so iiit good doge
+        such iiit very felicity so iiit such iiit
+        so much felicity such felicity
+        much felicity very iiit very iiit
+        such iiit good doge much felicity
+        so felicity much iiit so much felicity
+        so felicity good doge such felicity much iiit
+      </p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>so much felicity such felicity so much felicity
+        so iiit very felicity
+        such iiit such felicity such felicity
+        very iiit so iiit such felicity
+        such iiit wow
+        good doge so felicity wow
+        such iiit
+        very iiit so felicity much iiit wow much iiit
+        very iiit
+        so much iiit such iiit so much iiit
+        so iiit much iiit good doge
+        so iiit very iiit so iiit so much felicity </p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
 
-  <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
 
-  <p>Hi, sorry for my bad english&hellip;
+      <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
 
-  <p class="center">View the source, Luke!</p>
+      <p>Hi, sorry for my bad english&hellip;
 
-  <p>Sorry. Couldn't resist it.</p>
+      <p class="center">View the source, Luke!</p>
 
-</div></div>
+      <p>Sorry. Couldn't resist it.</p>
 
-  </ion-content>
+    </div>
+  </div>
+
+</ion-content>
