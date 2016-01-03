@@ -3,3 +3,25 @@ ion-content {
   background-color: black;
   color: white;
 }
+
+.col {
+  text-align: center;
+  text-decoration:none;
+  margin: .8em .8em;
+  padding: .8em 1em;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(200, 200, 200, .4) inset;
+}
