@@ -1,1 +1,14 @@
 /* Empty. Add your own CSS if you like */
+ion-content {
+    background-color: black;
+    color: white;
+}
+
+.heading {
+    border:1px solid yellow;
+    border-radius: 15px;
+    padding:3em;
+    margin:4em;
+    color: white;
+    text-align: center;
+}
