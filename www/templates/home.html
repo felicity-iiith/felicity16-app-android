@@ -1,14 +1,26 @@
 <ion-view view-title="Felicity 2K16">
+
+
   <ion-content>
     <ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">
-      <ion-slide class="Sliderhomepage">
-        <div class="border">
-          Hi
+      <ion-slide class="Sliderhomepage page1">
+        <div class="home">
+          <header class="page" id="home" style="display:block;">
+            <div class="content">
+              <h1 class="page-title">Felicity</h1>
+              <p class="year">2016</p>
+              <p class="tagline">Where magic happens</p>
+              <p class="coming-soon">Coming soon<span class="ellipsis">...</span></p>
+            </div>
+          </header>
         </div>
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
       </ion-slide>
 
-      <ion-slide class="Sliderhomepage">
-        <div class="border">
+      <ion-slide class="Sliderhomepage page2">
+        <div class="border home">
           <div class="row responsive-sm">
             <a class="col" ng-href="#/events">Events</a>
           </div>
@@ -28,6 +40,9 @@
             <a class="col">Sponsors</a>
           </div>
         </div>
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
       </ion-slide>
 
     </ion-slide-box>
