@@ -2,6 +2,16 @@
   <ion-content>
     <ion-slide-box class="" on-slide-changed="slideHasChanged($index)">
       <ion-slide>
+        <div class="red live-tile" data-mode="flip" data-delay="4000">
+          <div>front</div>
+          <div>back</div>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $(".live-tile").liveTile();
+          });
+        </script>
+
         <div class="row responsive-sm">
           <a class="col" ng-href="#/events">Events</a>
         </div>
