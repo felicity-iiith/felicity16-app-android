@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
-  .controller('HomeCtrl', function ($scope, $stateParams, Events) {
+  .controller('HomeCtrl', function ($scope, $stateParams, Events, $ionicSlideBoxDelegate) {
+    $scope.slideHasChanged= function(x){};
   })
   .controller('CategoryCtrl', function ($scope, $stateParams, Events) {
     var category;

@@ -1,22 +1,29 @@
 <ion-view view-title="Felicity 2K16">
   <ion-content>
-    <div class="row responsive-sm">
-      <a class="col" ng-href="#/events">Events</a>
-    </div>
-    <div class="row responsive-sm">
-      <a class="col">Schedule</a>
-    </div>
-    <div class="row responsive-sm">
-      <a class="col">Gallery</a>
-      <a class="col">Major Nights</a>
-    </div>
-    <div class="row  responsive-sm">
-      <a class="col" ng-href="#/about">About</a>
-      <a class="col">Team</a>
-      <a class="col">Contact</a>
-    </div>
-    <div class="row  responsive-sm">
-      <a class="col">Sponsors</a>
-    </div>
+    <ion-slide-box class="" on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <div class="row responsive-sm">
+          <a class="col" ng-href="#/events">Events</a>
+        </div>
+        <div class="row responsive-sm">
+          <a class="col">Schedule</a>
+        </div>
+        <div class="row responsive-sm">
+          <a class="col">Gallery</a>
+          <a class="col">Major Nights</a>
+        </div>
+        <div class="row  responsive-sm">
+          <a class="col" ng-href="#/about">About</a>
+          <a class="col">Team</a>
+          <a class="col">Contact</a>
+        </div>
+        <div class="row  responsive-sm">
+          <a class="col">Sponsors</a>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class=""><h1>Hi</h1></div>
+      </ion-slide>
+    </ion-slide-box>
   </ion-content>
 </ion-view>
