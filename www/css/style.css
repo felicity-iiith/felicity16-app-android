@@ -1,7 +1,9 @@
 /* Empty. Add your own CSS if you like */
 ion-content {
-  background-color: black;
-  color: white;
+}
+
+.border{
+  border:1px solid black;
 }
 
 .col {
@@ -21,7 +23,21 @@ ion-content {
   transform: scale(1);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: #ffffff;
   cursor: pointer;
   box-shadow: 0 0 0 1px rgba(200, 200, 200, .4) inset;
+}
+
+.home-page{
+  width:100%;
+  height:100%;
+  background-color: white;
+}
+
+.slider-pager {
+  z-index:2;
+}
+
+.Sliderhomepage {
+  background-color: black;
 }
