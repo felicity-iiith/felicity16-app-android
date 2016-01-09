@@ -17,7 +17,7 @@
         <div class="clouds"></div>
       </ion-slide>
     <!--<ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">-->
-      <ion-slide class="Sliderhomepage" disable-scroll="false">
+      <ion-slide class="Sliderhomepage" style="overflow: auto !important">
         <style>
           .live-tile div {
             font-family: "Droid Sans", arial, verdana, sans-serif;
@@ -51,8 +51,6 @@
               Schedule
             </div>
           </a>
-        </div>
-        <div class="row">
           <a class="col green live-tile">
             <div>
               Gallery
@@ -96,8 +94,8 @@
             </div>
           </a>
         </div>
-        <div class="row  responsive-sm">
-          <a class="col">Sponsors</a>
+        <div class="bar">
+          <a href="" class="title">Sponsors</a>
         </div>
         <script type="text/javascript">
           $(document).ready(function () {
