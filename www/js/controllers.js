@@ -21,6 +21,7 @@ angular.module('starter.controllers', [])
     var event = Events.event($stateParams.eventid);
     if(event){
       $scope.event = event;
+      $scope.timeleft = new Date(event.event_end_time).toDateString();
     }else{
       $scope.event = {title:"Not Found"}
     }

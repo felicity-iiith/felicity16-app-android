@@ -1,6 +1,4 @@
 <ion-view view-title="Felicity 2K16">
-
-
   <ion-content>
     <ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">
       <ion-slide class="Sliderhomepage page1">
@@ -18,33 +16,95 @@
         <div class="twinkling"></div>
         <div class="clouds"></div>
       </ion-slide>
+    <!--<ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">-->
+      <ion-slide class="Sliderhomepage" disable-scroll="false">
+        <style>
+          .live-tile div {
+            font-family: "Droid Sans", arial, verdana, sans-serif;
+            font-weight: 700;
+            font-size: Large;
+            display: flex;
+            justify-content: center; /* align horizontal */
+            align-items: center;
+          }
 
-      <ion-slide class="Sliderhomepage page2">
-        <div class="border home">
-          <div class="row responsive-sm">
-            <a class="col" ng-href="#/events">Events</a>
-          </div>
-          <div class="row responsive-sm">
-            <a class="col">Schedule</a>
-          </div>
-          <div class="row responsive-sm">
-            <a class="col">Gallery</a>
-            <a class="col">Major Nights</a>
-          </div>
-          <div class="row  responsive-sm">
-            <a class="col" ng-href="#/about">About</a>
-            <a class="col">Team</a>
-            <a class="col">Contact</a>
-          </div>
-          <div class="row  responsive-sm">
-            <a class="col">Sponsors</a>
-          </div>
+          #home {
+            background-color: black;
+          }
+        </style>
+        <div class="row">
+          <a class="col purple live-tile" ng-href="#/events">
+            <div>
+              Events
+            </div>
+            <div>
+              Events
+            </div>
+          </a>
         </div>
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <div class="clouds"></div>
+        <div class="row">
+          <a class="col blue live-tile" data-mode="flip">
+            <div>
+              Schedule
+            </div>
+            <div>
+              Schedule
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <a class="col green live-tile">
+            <div>
+              Gallery
+            </div>
+            <div>
+              Gallery
+            </div>
+          </a>
+          <a class="col red live-tile">
+            <div>
+              Major Nights
+            </div>
+            <div>
+              Major Nights
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <a class="col pink live-tile" ng-href="#/about">
+            <div>
+              About
+            </div>
+            <div>
+              About
+            </div>
+          </a>
+          <a class="col orange live-tile">
+            <div>
+              Team
+            </div>
+            <div>
+              Team
+            </div>
+          </a>
+          <a class="col yellow live-tile">
+            <div>
+              Contact
+            </div>
+            <div>
+              Contact
+            </div>
+          </a>
+        </div>
+        <div class="row  responsive-sm">
+          <a class="col">Sponsors</a>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $(".live-tile").liveTile();
+          });
+        </script>
       </ion-slide>
-
     </ion-slide-box>
   </ion-content>
 </ion-view>
