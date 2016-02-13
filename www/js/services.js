@@ -2,11 +2,10 @@ angular.module('starter.services', [])
 
   .factory('Events', function ($http) {
     var events;
+    var categories;
     var lastupdated;
     var urls = {
-      events:"https://www.mukulhase.com/api/events",
-      event:"",
-      update:""
+      events:"https://www.mukulhase.com/api"
     };
     // Might use a resource here that returns a JSON array
     var updateFirst = function () {
@@ -20,9 +19,29 @@ angular.module('starter.services', [])
       lastupdated = up;
       window.localStorage["lastupdated"] = up;
     };
+    function addCategory(name,path){
+      $http.get(urls.events+path).then(function (response) {
+        categories[name]=response;
+        categories[name].path=path;
+      });
+    }
+    function addEvent(name,path){
+      $http.get(urls.events+path).then(function (response) {
+        events[name]=response;
+        events[name].category = path.split('/')[1];
+      });
+    }
     var updateEvents = function(up){
-      events = up;
-      window.localStorage["events"] = up;
+      events = up.page_data.events_data;
+      var i;
+      for(i in events){
+        if(events[i].template=="category"){
+          addCategory(events[i].data.name,events[i].data.path);
+        }else if(events[i].template=="event") {
+          addEvent(events[i].data.name,events[i].data.path);
+        }
+      }
+      window.localStorage["events"] = events;
     };
 
     if ("lastupdated" in window.localStorage) {
@@ -71,25 +90,15 @@ angular.module('starter.services', [])
 
       },
       "updateFirst": updateFirst,
-      all: function () {
-        return events;
+      categories: function() {
+        return categories;
+      },
+      category: function (category) {
+        return categories[category];
       },
       event: function (eventid) {
-        var cat = events.categories;
-        var found = false;
-        var event;
-        for (var x in cat) {
-          for (var y in cat[x].events) {
-            if (cat[x].events[y].id == eventid) {
-              found = true;
-              event = cat[x].events[y];
-              break;
-            }
-          }
-          if (found)break;
-        }
-        if (found) {
-          return event;
+        if (events.hasOwnProperty(eventid)) {
+          return events[eventid];
         } else {
           return false;
         }
