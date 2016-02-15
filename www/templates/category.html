@@ -1,9 +1,9 @@
 <ion-view view-title="{{title}}">
   <ion-content>
     <ion-list>
-      <ion-item type="item-text-wrap" ng-repeat="event in events" href="#/events/{{event.id}}">
-        <h2>{{event.title}}</h2>
-        <p>{{event.tagline}}</p>
+      <ion-item type="item-text-wrap" ng-repeat="event in events" href="#/events/{{event.page_data.name}}">
+        <h2>{{event.page_data.name}}</h2>
+        <p>{{event.page_data.tagline}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
