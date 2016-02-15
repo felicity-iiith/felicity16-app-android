@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
         }
       }
     }
-    $scope.title = category.name;
+    $scope.title = category.page_data.name;
     $scope.events = eventsOfCategory;
   })
   .controller('EventsCtrl', function ($scope, Events) {
