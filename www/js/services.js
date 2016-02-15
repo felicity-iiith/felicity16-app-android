@@ -31,7 +31,13 @@ angular.module('starter.services', [])
       });
     };
     var addCategory = function (name, path) {
-      $http.get(urls.events + "/" + path.split('/')[1]).then(function (response) {
+      var request;
+      if(name in categories){
+        request=$http.get(urls.events + "/" + path.split('/')[1]+"?prev_id="+categories[name].version_id);
+      }else{
+        request=$http.get(urls.events + "/" + path.split('/')[1]);
+      }
+      request.then(function (response) {
         if (response.data != "") {
           categories[name] = response.data;
           console.log(categories);
@@ -41,7 +47,13 @@ angular.module('starter.services', [])
       });
     };
     var addEvent = function (name, path) {
-      $http.get(urls.events + path).then(function (response) {
+      var request;
+      if(name in events){
+        request=$http.get(urls.events + "/" + path+"?prev_id="+events[name].version_id);
+      }else{
+        request=$http.get(urls.events + "/" + path);
+      }
+      request.then(function (response) {
         if (response.data != "") {
           events[name] = response.data;
           events[name].category = path.split('/')[1];
@@ -52,23 +64,22 @@ angular.module('starter.services', [])
     };
     var updateEvents = function (up) {
       if (up.data != "") {
-        console.log(up);
         list = up.data;
-        var events_data = list.page_data.events_data;
-        var i;
-        count = 0;
-        for (i in events_data) {
-          if (events_data[i].template == "category") {
-            count++;
-            addCategory(events_data[i].data.name, events_data[i].path);
-          } else if (events_data[i].template == "event") {
-            count++;
-            addEvent(events_data[i].data.name, events_data[i].path);
-          }
-        }
-        save();
-        console.log(events);
       }
+      var events_data = list.page_data.events_data;
+      var i;
+      count = 0;
+      for (i in events_data) {
+        if (events_data[i].template == "category") {
+          count++;
+          addCategory(events_data[i].data.name, events_data[i].path);
+        } else if (events_data[i].template == "event") {
+          count++;
+          addEvent(events_data[i].data.name, events_data[i].path);
+        }
+      }
+      save();
+      console.log(events);
     };
 
     function save() {
