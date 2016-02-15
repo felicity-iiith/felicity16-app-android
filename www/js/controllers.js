@@ -5,15 +5,19 @@ angular.module('starter.controllers', [])
   .controller('CategoryCtrl', function ($scope, $stateParams, Events) {
     var category=Events.categories()[$stateParams.categoryid];
     var events=Events.events();
+    var eventsOfCategory=[];
     for (var key in events) {
       if (events.hasOwnProperty(key)) {
-        if(events[key].category==);
+        if(events[key].category==category.path){
+          eventsOfCategory.push(events[key]);
+        }
       }
     }
     $scope.title = category.name;
-    $scope.events = category.events;
+    $scope.events = eventsOfCategory;
   })
   .controller('EventsCtrl', function ($scope, Events) {
+    console.log(Events.categories());
     $scope.categories = Events.categories();
   })
   .controller('EventViewCtrl', function ($scope, $stateParams, Events) {
