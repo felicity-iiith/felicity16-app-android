@@ -15,17 +15,15 @@ angular.module('starter.controllers', [])
     }
     $scope.title = category.name;
     $scope.events = eventsOfCategory;
-    console.log(eventsOfCategory);
   })
   .controller('EventsCtrl', function ($scope, Events) {
-    console.log(Events.categories());
     $scope.categories = Events.categories();
   })
   .controller('EventViewCtrl', function ($scope, $stateParams, Events) {
     var event = Events.event($stateParams.eventid);
     if(event){
       $scope.event = event;
-      $scope.timeleft = new Date(event.event_end_time).toDateString();
+      $scope.timeleft = new Date(event.page_data.end_time).toDateString();
     }else{
       $scope.event = {title:"Not Found"}
     }

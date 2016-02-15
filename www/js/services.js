@@ -21,7 +21,6 @@ angular.module('starter.services', [])
     };
     var addCategory =function(name,path){
       $http.get(urls.events+"/"+path.split('/')[1]).then(function (response) {
-        console.log(response);
         categories[name]=response.data;
         categories[name].path=path.split('/')[1];
       });
@@ -33,7 +32,6 @@ angular.module('starter.services', [])
       });
     };
     var updateEvents = function(up){
-      console.log(up);
       events = up.data.page_data.events_data;
       var i;
       for(i in events){
