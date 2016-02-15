@@ -9,17 +9,17 @@ angular.module('starter.services', [])
       events: "http://felicity.iiit.ac.in/api"
     };
     if ("events" in window.localStorage) {
-      events = window.localStorage["events"];
+      events = JSON.parse(window.localStorage["events"]);
     }else{
       events = {};
     }
     if ("categories" in window.localStorage) {
-      categories = window.localStorage["categories"];
+      categories = JSON.parse(window.localStorage["categories"]);
     }else{
       categories = {};
     }
     if ("list" in window.localStorage) {
-      list = window.localStorage["list"];
+      list = JSON.parse(window.localStorage["list"]);
     }else{
       list = {};
     }
@@ -32,7 +32,7 @@ angular.module('starter.services', [])
     };
     var addCategory = function (name, path) {
       $http.get(urls.events + "/" + path.split('/')[1]).then(function (response) {
-        if (response.status == 200) {
+        if (response.data != "") {
           categories[name] = response.data;
           console.log(categories);
           categories[name].path = path.split('/')[1];
@@ -42,7 +42,7 @@ angular.module('starter.services', [])
     };
     var addEvent = function (name, path) {
       $http.get(urls.events + path).then(function (response) {
-        if (response.status == 200) {
+        if (response.data != "") {
           events[name] = response.data;
           events[name].category = path.split('/')[1];
         }
@@ -51,30 +51,32 @@ angular.module('starter.services', [])
 
     };
     var updateEvents = function (up) {
-      if (up.status == 200) {
-        events = up.data.page_data.events_data;
+      if (up.data != "") {
+        console.log(up);
+        list = up.data;
+        var events_data = list.page_data.events_data;
         var i;
         count = 0;
-        for (i in events) {
-          if (events[i].template == "category") {
+        for (i in events_data) {
+          if (events_data[i].template == "category") {
             count++;
-            addCategory(events[i].data.name, events[i].path);
-          } else if (events[i].template == "event") {
+            addCategory(events_data[i].data.name, events_data[i].path);
+          } else if (events_data[i].template == "event") {
             count++;
-            addEvent(events[i].data.name, events[i].path);
+            addEvent(events_data[i].data.name, events_data[i].path);
           }
         }
-        list = up.data;
         save();
+        console.log(events);
       }
     };
 
     function save() {
       if (count == 0) {
         console.log("updated!!");
-        window.localStorage["events"] = events;
-        window.localStorage["categories"] = categories;
-        window.localStorage["list"] = list;
+        window.localStorage["events"] = JSON.stringify(events);
+        window.localStorage["categories"] = JSON.stringify(categories);
+        window.localStorage["list"] = JSON.stringify(list);
       } else {
         setTimeout(save, 50);
       }
