@@ -15,6 +15,7 @@ angular.module('starter.controllers', [])
     }
     $scope.title = category.name;
     $scope.events = eventsOfCategory;
+    console.log(eventsOfCategory);
   })
   .controller('EventsCtrl', function ($scope, Events) {
     console.log(Events.categories());

@@ -20,7 +20,8 @@ angular.module('starter.services', [])
       window.localStorage["lastupdated"] = up;
     };
     var addCategory =function(name,path){
-      $http.get(urls.events+path).then(function (response) {
+      $http.get(urls.events+"/"+path.split('/')[1]).then(function (response) {
+        console.log(response);
         categories[name]=response.data;
         categories[name].path=path.split('/')[1];
       });
@@ -69,6 +70,9 @@ angular.module('starter.services', [])
       },
       category: function (category) {
         return categories[category];
+      },
+      events: function () {
+        return events;
       },
       event: function (eventid) {
         if (events.hasOwnProperty(eventid)) {
