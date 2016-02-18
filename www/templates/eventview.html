@@ -1,7 +1,7 @@
 <ion-view view-title="{{event.page_data.name}}">
   <ion-content>
     <h2>{{event.page_data.tagline}}</h2>
-    <h3>{{event.page_data.description}}</h3>
+    <p ng-bind-html="event.page_data.description"></p>
     <ion-footer-bar class="bar-royal">
       <h3 class="title">{{timeleft}}</h3>
     </ion-footer-bar>
