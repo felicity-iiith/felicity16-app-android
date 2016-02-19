@@ -1,11 +1,16 @@
 <ion-view view-title="Events">
   <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="(key, value) in categories" href="#/category/{{key}}">
-        <img src="https://felicity.iiit.ac.in/{{value.page_data.og_image}}">
+      <ion-item class="item-remove-animate item-icon-right" type="item-text-wrap" ng-repeat="(key, value) in categories" href="#/category/{{key}}">
+        <!--<img src="https://felicity.iiit.ac.in/{{value.page_data.og_image}}">-->
         <h2>{{key}}</h2>
         <p>{{value.page_data.tagline}}</p>
       </ion-item>
     </ion-list>
+    <h3 ng-show="isLoading">Loading <ion-spinner></ion-spinner></h3>
   </ion-content>
 </ion-view>

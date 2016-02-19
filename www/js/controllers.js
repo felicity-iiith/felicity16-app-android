@@ -1,6 +1,9 @@
 angular.module('starter.controllers', [])
-  .controller('HomeCtrl', function ($scope, $stateParams, Events, $ionicSlideBoxDelegate) {
-    $scope.slideHasChanged= function(x){};
+  .controller('HomeCtrl', function ($scope, $stateParams, Events, $ionicSlideBoxDelegate,  $cordovaLocalNotification) {
+    $scope.clear = function(){
+      localStorage.clear();
+      Events.clear();
+    };
   })
   .controller('CategoryCtrl', function ($scope, $stateParams, Events) {
     var category=Events.categories()[$stateParams.categoryid];
@@ -18,6 +21,19 @@ angular.module('starter.controllers', [])
   })
   .controller('EventsCtrl', function ($scope, Events) {
     $scope.categories = Events.categories();
+    $scope.isLoading = Events.isLoading();
+    $scope.doRefresh = function(){
+      Events.updateFirst();
+    };
+    setInterval(function(){
+      $scope.isLoading = Events.isLoading();
+      if(!Events.isLoading()){
+        $scope.$broadcast('scroll.refreshComplete');
+      }
+    },1000);
+  })
+  .controller('AboutCtrl', function ($scope, Events) {
+
   })
   .controller('EventViewCtrl', function ($scope, $stateParams, Events) {
     var event = Events.event($stateParams.eventid);

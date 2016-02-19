@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-  .factory('Events', function ($http) {
+  .factory('Events', function ($http, $cordovaLocalNotification) {
     var events = {};
     var categories = {};
     var list = {};
@@ -8,6 +8,11 @@ angular.module('starter.services', [])
     var urls = {
       events: "http://felicity.iiit.ac.in/api"
     };
+    function clear(){
+      events = {};
+      categories = {};
+      list = {};
+    }
     if ("events" in window.localStorage) {
       events = JSON.parse(window.localStorage["events"]);
     }else{
@@ -57,6 +62,17 @@ angular.module('starter.services', [])
         if (response.data != "") {
           events[name] = response.data;
           events[name].category = path.split('/')[1];
+          if(events[name].page_data.start_time!="" && new Date() < new Date(events[name].page_data.start_time)) {
+            $cordovaLocalNotification.schedule({
+              id: count,
+              at: new Date(events[name].page_data.start_time),
+              text: events[name].page_data.description,
+              title: events[name].page_data.name + " has begun!",
+              sound: null
+            }).then(function () {
+              console.log("The notification has been set");
+            });
+          }
         }
         count--;
       });
@@ -96,6 +112,7 @@ angular.module('starter.services', [])
     updateFirst();
 
     return {
+      clear: clear,
       update: function () {
         //update here
 
@@ -116,6 +133,9 @@ angular.module('starter.services', [])
         } else {
           return false;
         }
+      },
+      isLoading: function (){
+        return !(count==0);
       }
     };
   });

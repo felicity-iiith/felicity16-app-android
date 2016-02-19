@@ -1,6 +1,7 @@
 <ion-view view-title="Felicity 2K16">
   <ion-content>
-    <ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">
+    <!--<ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">-->
+      <!--
       <ion-slide class="Sliderhomepage page1">
         <div class="home">
           <header class="page" id="home" style="display:block;">
@@ -16,8 +17,9 @@
         <div class="twinkling"></div>
         <div class="clouds"></div>
       </ion-slide>
-    <!--<ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">-->
-      <ion-slide class="Sliderhomepage" style="overflow: auto !important">
+      -->
+    <!--<ion-slide-box class="home-page" on-slide-changed="slideHasChanged($index)">
+      <ion-slide class="Sliderhomepage" style="overflow: auto !important">-->
         <style>
           .live-tile div {
             font-family: "Droid Sans", arial, verdana, sans-serif;
@@ -26,6 +28,9 @@
             display: flex;
             justify-content: center; /* align horizontal */
             align-items: center;
+          }
+          .live-tile{
+            margin: auto;
           }
 
           #home {
@@ -93,16 +98,19 @@
               Contact
             </div>
           </a>
+
+
         </div>
-        <div class="bar">
+        <ion-footer-bar class="bar bar-positive">
           <a href="" class="title">Sponsors</a>
-        </div>
+          <button class="button" ng-click="clear()">Clear</button>
+        </ion-footer-bar>
         <script type="text/javascript">
           $(document).ready(function () {
             $(".live-tile").liveTile();
           });
         </script>
-      </ion-slide>
-    </ion-slide-box>
+        <!--  </ion-slide>
+        </ion-slide-box>-->
   </ion-content>
 </ion-view>
